@@ -1,0 +1,6 @@
+{
+  "name": "ঘুষখুর - নাগরিক অভিজ্ঞতা ও সেবা প্ল্যাটফর্ম",
+  "description": "বাংলাদেশের নাগরিকদের জনসেবা গ্রহণ, সরকারি দপ্তর ও নাগরিক সেবার বাস্তব অভিজ্ঞতা এবং জবাবদিহিতা বিষয়ক উন্মুক্ত ও দায়িত্বশীল প্ল্যাটফর্ম।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
