@@ -11,7 +11,7 @@ import { Story, Comment, Report, SiteSettings } from './src/types.ts';
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3001;
 
 app.use(express.json());
 
