@@ -328,15 +328,15 @@ export default function WritePage({ onNavigate }: WritePageProps) {
                     id="bribe-amount"
                     type="number"
                     min="0"
-                    step="50"
+                    step="1"
                     value={bribeAmount}
                     onChange={(e) => setBribeAmount(e.target.value)}
-                    placeholder="যেমন: ৫০০০ (ঘুষ না দিলে ০ লিখুন)"
+                    placeholder="যেমন: ৩২৫০ বা ৫০০০ (ঘুষ না দিলে ০ লিখুন)"
                     className="w-full pl-8 pr-3.5 py-2 text-sm bg-white border border-stone-300 rounded-xl focus:outline-none focus:border-red-500 font-mono font-bold"
                     required
                   />
                 </div>
-                {/* Quick preset buttons */}
+                {/* Quick preset helper buttons */}
                 <div className="flex flex-wrap gap-1.5 mt-2">
                   {[
                     { label: '৳০ (দেইনি)', value: '0' },
@@ -345,7 +345,6 @@ export default function WritePage({ onNavigate }: WritePageProps) {
                     { label: '৳২,০০০', value: '2000' },
                     { label: '৳৫,০০০', value: '5000' },
                     { label: '৳১০,০০০', value: '10000' },
-                    { label: '৳২০,০০০+', value: '20000' },
                   ].map((preset) => (
                     <button
                       key={preset.value}
@@ -362,7 +361,7 @@ export default function WritePage({ onNavigate }: WritePageProps) {
                   ))}
                 </div>
                 <p className="text-[11px] text-stone-500 mt-1">
-                  যদি আপনি কোনো ঘুষ না দিয়ে থাকেন বা প্রতিবাদ করে কাজ আদায় করে থাকেন, তবে <strong>'০'</strong> লিখুন।
+                  আপনার ইচ্ছামতো যেকোনো সঠিক টাকার পরিমাণ (যেমন: ১,২৫০ বা ৩,৭০০) এখানে স্বাধীনভাবে টাইপ করতে পারেন। ঘুষ না দিয়ে থাকলে '০' লিখুন।
                 </p>
               </div>
 

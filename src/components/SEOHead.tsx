@@ -37,6 +37,7 @@ export default function SEOHead({
 
     // Update standard meta tags
     setMeta('description', description);
+    setMeta('keywords', 'ঘুষ, ঘুষখুর, ghush, ghushkhur, corruption in bangladesh, bribery bangladesh, সরকারি অফিসে ঘুষ, ভূমি অফিস ঘুষ, নামজারি ঘুষ, সাব রেজিস্ট্রি অফিস ঘুষ, NID corruption, citizen experience, নাগরিক অভিযোগ, দুর্নীতি দমন');
     setMeta('robots', noindex ? 'noindex, nofollow' : 'index, follow');
 
     // Open Graph

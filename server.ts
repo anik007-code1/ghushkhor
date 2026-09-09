@@ -53,7 +53,12 @@ let settings: SiteSettings = {
 google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0`,
 };
 
-function getCanonicalBase(): string {
+function getCanonicalBase(req?: express.Request): string {
+  if (req) {
+    const proto = (req.headers['x-forwarded-proto'] as string) || req.protocol || 'https';
+    const host = req.get('host') || 'ghushkhur.com';
+    return `${proto}://${host}`;
+  }
   const url = settings.siteUrl.replace(/\/$/, '');
   return url || 'https://ghushkhur.com';
 }
@@ -62,7 +67,7 @@ function getCanonicalBase(): string {
 // 1. Dynamic Sitemap Generation (Requirement 6)
 // -------------------------------------------------------------
 app.get('/sitemap.xml', (req, res) => {
-  const baseUrl = getCanonicalBase();
+  const baseUrl = getCanonicalBase(req);
   const publishedStories = stories.filter((s) => s.status === 'PUBLISHED');
 
   // Find districts with published stories (No thin pages requirement 17)
@@ -136,7 +141,7 @@ ${urls
 // 2. Robots.txt (Requirement 7)
 // -------------------------------------------------------------
 app.get('/robots.txt', (req, res) => {
-  const baseUrl = getCanonicalBase();
+  const baseUrl = getCanonicalBase(req);
   const robots = `# robots.txt for ঘুষখুর platform
 User-agent: *
 Allow: /

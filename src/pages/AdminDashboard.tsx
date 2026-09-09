@@ -1367,6 +1367,7 @@ export default function AdminDashboard({
                   <input
                     type="number"
                     min="0"
+                    step="1"
                     value={editBribeAmount}
                     onChange={(e) => setEditBribeAmount(e.target.value)}
                     className="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-lg font-mono font-bold"
