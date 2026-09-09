@@ -137,7 +137,7 @@ export default function AdSenseChecklistPage({
       title: '১৫. কার্যকর মডারেশন ও অনুমোদন ব্যবস্থা',
       description: 'সকল ব্যবহারকারীর লেখা PENDING হিসেবে জমা হয় এবং এডমিন অনুমোদনে প্রকাশিত হয়।',
       autoStatus: true,
-      link: '/admin',
+      link: '/',
     },
     {
       id: 'gsc-ready',
@@ -197,7 +197,6 @@ export default function AdSenseChecklistPage({
       <Breadcrumbs
         items={[
           { name: 'হোম', url: '/' },
-          { name: 'অ্যাডমিন প্যানেল', url: '/admin' },
           { name: 'AdSense চেকলিস্ট', url: '/admin/checklist' },
         ]}
         onNavigate={onNavigate}
@@ -308,10 +307,10 @@ export default function AdSenseChecklistPage({
           </button>
           <button
             type="button"
-            onClick={() => onNavigate('/admin')}
+            onClick={() => onNavigate('/')}
             className="px-4 py-2 bg-stone-900 text-white rounded-lg text-xs font-semibold hover:bg-stone-800"
           >
-            মডারেশন প্যানেলে ফিরুন
+            মূল পাতায় ফিরুন
           </button>
         </div>
       </div>

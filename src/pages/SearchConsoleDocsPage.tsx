@@ -68,7 +68,7 @@ export default function SearchConsoleDocsPage({ onNavigate }: SearchConsoleDocsP
               <div className="p-3.5 bg-stone-50 rounded-xl border border-stone-200">
                 <span className="font-bold text-stone-900 text-xs block mb-1">পদ্ধতি ১: এইচটিএমএল মেটা ট্যাগ (প্রস্তাবিত)</span>
                 <p className="text-[11px] text-stone-600">
-                  Search Console থেকে মেটা ট্যাগের কোড কপি করে আমাদের <button type="button" onClick={() => onNavigate('/admin')} className="text-red-700 underline font-medium">অ্যাডমিন প্যানেলে</button> পেস্ট করুন। সার্ভার তা স্বয়ংক্রিয়ভাবে হেড সেকশনে যুক্ত করবে।
+                  Search Console থেকে মেটা ট্যাগের কোড কপি করে সাইটের অ্যাডমিন প্যানেলে (সাইট কনফিগারেশন সেকশন) পেস্ট করুন। সার্ভার তা স্বয়ংক্রিয়ভাবে হেড সেকশনে যুক্ত করবে।
                 </p>
               </div>
               <div className="p-3.5 bg-stone-50 rounded-xl border border-stone-200">
@@ -136,10 +136,10 @@ export default function SearchConsoleDocsPage({ onNavigate }: SearchConsoleDocsP
         <div className="pt-4 border-t border-stone-100 flex justify-end">
           <button
             type="button"
-            onClick={() => onNavigate('/admin/checklist')}
-            className="px-5 py-2.5 bg-red-700 hover:bg-red-600 text-white rounded-xl text-xs font-semibold shadow-sm flex items-center gap-1.5"
+            onClick={() => onNavigate('/')}
+            className="px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs font-semibold shadow-sm flex items-center gap-1.5"
           >
-            <span>২১ দফা এডসেন্স চেকলিস্ট দেখুন</span>
+            <span>মূল পাতায় ফিরে যান</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>

@@ -1,4 +1,4 @@
-import { Shield, FileText, CheckCircle2, Lock, HelpCircle, ExternalLink, Globe } from 'lucide-react';
+import { FileText, CheckCircle2, Lock, HelpCircle, ExternalLink, Globe } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -139,7 +139,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Col 5: এসইও, এডসেন্স ও টেকনিক্যাল */}
           <div>
             <h3 className="text-white font-semibold text-sm mb-3 tracking-wide uppercase">
-              এসইও ও প্রশাসন
+              এসইও ও প্রযুক্তি
             </h3>
             <ul className="space-y-2 text-xs">
               <li>
@@ -149,25 +149,6 @@ export default function Footer({ onNavigate }: FooterProps) {
                   className="hover:text-white hover:underline transition-colors flex items-center gap-1"
                 >
                   <span>সার্চ কনসোল ও এডসেন্স গাইড</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('/admin/checklist')}
-                  className="hover:text-amber-400 hover:underline transition-colors flex items-center gap-1"
-                >
-                  <span>AdSense প্রকাশনা চেকলিস্ট</span>
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('/admin')}
-                  className="text-amber-400 hover:text-amber-300 hover:underline transition-colors flex items-center gap-1 font-semibold"
-                >
-                  <Shield className="w-3.5 h-3.5 text-amber-400" />
-                  <span>কাস্টম অ্যাডমিন প্যানেল (/admin)</span>
                 </button>
               </li>
               <li className="pt-2 border-t border-stone-800">

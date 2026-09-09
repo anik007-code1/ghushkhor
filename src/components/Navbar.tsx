@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { Shield, PenLine, Menu, X, Search, MapPin, TrendingUp, BookOpen, AlertCircle } from 'lucide-react';
+import { PenLine, Menu, X, Search, MapPin, TrendingUp, BookOpen, AlertCircle } from 'lucide-react';
 
 interface NavbarProps {
   currentPath: string;
@@ -50,15 +50,6 @@ export default function Navbar({ currentPath, onNavigate, onSearch }: NavbarProp
               className="hover:text-stone-200 transition-colors"
             >
               কমিউনিটি গাইডলাইন
-            </button>
-            <span>•</span>
-            <button
-              onClick={() => onNavigate('/admin')}
-              className="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1 transition-colors"
-              title="অ্যাডমিন প্যানেল (/admin)"
-            >
-              <Shield className="w-3 h-3 text-amber-400" />
-              <span>অ্যাডমিন প্যানেল</span>
             </button>
           </div>
         </div>
@@ -132,17 +123,6 @@ export default function Navbar({ currentPath, onNavigate, onSearch }: NavbarProp
             >
               <PenLine className="w-4 h-4" />
               <span>অভিজ্ঞতা লিখুন</span>
-            </button>
-
-            {/* Admin Panel Button */}
-            <button
-              type="button"
-              onClick={() => onNavigate('/admin')}
-              className="hidden sm:flex items-center gap-1.5 bg-stone-800 hover:bg-stone-700 border border-stone-700 text-amber-400 hover:text-amber-300 text-xs font-semibold px-2.5 sm:px-3 py-2 sm:py-2.5 rounded-lg shadow-sm transition-all"
-              title="অ্যাডমিন প্যানেল (/admin)"
-            >
-              <Shield className="w-4 h-4 text-amber-400" />
-              <span>অ্যাডমিন</span>
             </button>
 
             {/* Mobile Menu Toggle */}
@@ -235,23 +215,6 @@ export default function Navbar({ currentPath, onNavigate, onSearch }: NavbarProp
             >
               ব্যবহারের শর্তাবলি
             </button>
-            <div className="pt-2">
-              <button
-                onClick={() => {
-                  onNavigate('/admin');
-                  setMobileMenuOpen(false);
-                }}
-                className="w-full text-left py-2 px-3 rounded-lg bg-stone-900 border border-stone-700/80 text-amber-400 font-semibold flex items-center justify-between hover:bg-stone-800 transition-colors"
-              >
-                <span className="flex items-center gap-2">
-                  <Shield className="w-4 h-4 text-amber-400" />
-                  <span>মডারেশন ও অ্যাডমিন প্যানেল</span>
-                </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-stone-800 text-stone-300">
-                  /admin
-                </span>
-              </button>
-            </div>
           </div>
         </div>
       )}
