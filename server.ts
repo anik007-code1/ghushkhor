@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import crypto from 'crypto';
+import compression from 'compression';
 import { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
 import { INITIAL_STORIES } from './src/data/initialStories.ts';
@@ -13,6 +14,7 @@ dotenv.config();
 const app = express();
 const PORT = Number(process.env.PORT) || 3001;
 
+app.use(compression());
 app.use(express.json());
 
 // Security: In production, block public web access to /src/ folder and raw source files
@@ -881,11 +883,30 @@ async function startServer() {
   } else {
     const distPath = path.join(process.cwd(), 'dist');
     const indexHtml = fs.readFileSync(path.join(distPath, 'index.html'), 'utf-8');
+    const renderCache = new Map<string, { html: string; timestamp: number }>();
+    const CACHE_TTL = 5 * 60 * 1000; // 5 minutes cache
 
-    app.use(express.static(distPath, { index: false }));
+    // Aggressive static asset caching for small VPS protection (30 days)
+    app.use(express.static(distPath, { 
+      index: false, 
+      maxAge: '30d', 
+      immutable: true 
+    }));
 
     app.get('*', (req, res) => {
-      const rendered = injectSEOIntoHTML(indexHtml, req.originalUrl);
+      const url = req.originalUrl;
+      const cached = renderCache.get(url);
+      const now = Date.now();
+
+      if (cached && (now - cached.timestamp < CACHE_TTL)) {
+        res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=600');
+        return res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(cached.html);
+      }
+
+      const rendered = injectSEOIntoHTML(indexHtml, url);
+      renderCache.set(url, { html: rendered, timestamp: now });
+
+      res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=600');
       res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(rendered);
     });
   }
