@@ -48,7 +48,7 @@ export default function AdSenseChecklistPage({
     {
       id: 'about',
       title: '৩. প্ল্যাটফর্ম পরিচিতি (About Us) প্রকাশিত',
-      description: 'ঘুষখুর কী, কেন প্রয়োজন, কীভাবে বেনামী প্রকাশনা কাজ করে ও লক্ষ্য।',
+      description: 'ঘুষখোর কী, কেন প্রয়োজন, কীভাবে বেনামী প্রকাশনা কাজ করে ও লক্ষ্য।',
       autoStatus: true,
       link: '/about',
     },
@@ -76,7 +76,7 @@ export default function AdSenseChecklistPage({
     {
       id: 'disclaimer',
       title: '৭. স্বাতন্ত্র্য ও অ-সরকারি ঘোষণা (Independence Disclaimer)',
-      description: 'ঘুষখুর বাংলাদেশ সরকারের কোনো সরকারি বাতায়ন নয়—ফুটার ও এবাউটে স্পষ্ট ঘোষণা।',
+      description: 'ঘুষখোর বাংলাদেশ সরকারের কোনো সরকারি বাতায়ন নয়—ফুটার ও এবাউটে স্পষ্ট ঘোষণা।',
       autoStatus: true,
       link: '/about',
     },
@@ -189,7 +189,7 @@ export default function AdSenseChecklistPage({
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 md:py-8">
       <SEOHead
-        title="গুগল এডসেন্স ও প্রকাশনা প্রস্তুতি চেকলিস্ট | ঘুষখুর এডমিন"
+        title="গুগল এডসেন্স ও প্রকাশনা প্রস্তুতি চেকলিস্ট | ঘুষখোর এডমিন"
         description="গুগল এডসেন্স আবেদন ও সার্চ ইঞ্জিনে সম্পূর্ণ প্রস্তুত হওয়ার ২১ দফা স্বয়ংক্রিয় ও ম্যানুয়াল যাচাইকরণ তালিকা।"
         noindex={true}
       />

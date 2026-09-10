@@ -10,7 +10,7 @@ export default function SearchConsoleDocsPage({ onNavigate }: SearchConsoleDocsP
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 md:py-8">
       <SEOHead
-        title="গুগল সার্চ কনসোল ও এডসেন্স সেটআপ নির্দেশিকা | ঘুষখুর গাইড"
+        title="গুগল সার্চ কনসোল ও এডসেন্স সেটআপ নির্দেশিকা | ঘুষখোর গাইড"
         description="কাস্টম ডোমেন, গুগল সার্চ কনসোল ভেরিফিকেশন, সাইটম্যাপ সাবমিশন, ads.txt এবং গুগল এডসেন্স অনুমোদনের পূর্ণাঙ্গ নির্দেশিকা।"
         canonicalUrl="/search-console-docs"
       />
@@ -33,7 +33,7 @@ export default function SearchConsoleDocsPage({ onNavigate }: SearchConsoleDocsP
             গুগল সার্চ কনসোল ও এডসেন্স নির্দেশিকা
           </h1>
           <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-            ঘুষখুর প্ল্যাটফর্মটিকে সার্চ ইঞ্জিনে শীর্ষ অবস্থানে নিয়ে যাওয়া এবং সফলভাবে গুগল এডসেন্স অনুমোদনের জন্য ধাপে ধাপে নির্দেশিকা।
+            ঘুষখোর প্ল্যাটফর্মটিকে সার্চ ইঞ্জিনে শীর্ষ অবস্থানে নিয়ে যাওয়া এবং সফলভাবে গুগল এডসেন্স অনুমোদনের জন্য ধাপে ধাপে নির্দেশিকা।
           </p>
         </div>
 

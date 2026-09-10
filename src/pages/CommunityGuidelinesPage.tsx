@@ -10,8 +10,8 @@ export default function CommunityGuidelinesPage({ onNavigate }: CommunityGuideli
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 md:py-8">
       <SEOHead
-        title="কমিউনিটি গাইডলাইন - দায়িত্বশীল নাগরিক প্রকাশের নীতিমালা | ঘুষখুর"
-        description="ঘুষখুর প্ল্যাটফর্মে জনসেবার অভিজ্ঞতা প্রকাশের নিয়মাবলি: কী লিখবেন এবং কোন বিষয়গুলো কঠোরভাবে নিষিদ্ধ।"
+        title="কমিউনিটি গাইডলাইন - দায়িত্বশীল নাগরিক প্রকাশের নীতিমালা | ঘুষখোর"
+        description="ঘুষখোর প্ল্যাটফর্মে জনসেবার অভিজ্ঞতা প্রকাশের নিয়মাবলি: কী লিখবেন এবং কোন বিষয়গুলো কঠোরভাবে নিষিদ্ধ।"
         canonicalUrl="/community-guidelines"
       />
 

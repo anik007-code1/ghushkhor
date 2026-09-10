@@ -29,8 +29,8 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 md:py-8">
       <SEOHead
-        title="যোগাযোগ ও সম্পাদকীয় সহায়তা | ঘুষখুর"
-        description="ঘুষখুর প্ল্যাটফর্মের সম্পাদকীয় দল, তথ্য সংশোধন, কপিরাইট নোটিশ ও বিজ্ঞাপন সংক্রান্ত যোগাযোগের মাধ্যম।"
+        title="যোগাযোগ ও সম্পাদকীয় সহায়তা | ঘুষখোর"
+        description="ঘুষখোর প্ল্যাটফর্মের সম্পাদকীয় দল, তথ্য সংশোধন, কপিরাইট নোটিশ ও বিজ্ঞাপন সংক্রান্ত যোগাযোগের মাধ্যম।"
         canonicalUrl="/contact"
       />
 

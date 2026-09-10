@@ -24,7 +24,7 @@ export default function DistrictDetailPage({
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
         <SEOHead
-          title="জেলাটি পাওয়া যায়নি | ঘুষখুর"
+          title="জেলাটি পাওয়া যায়নি | ঘুষখোর"
           description="অনুরোধকৃত জেলাটি খুঁজে পাওয়া যায়নি।"
           noindex={true}
         />
@@ -49,7 +49,7 @@ export default function DistrictDetailPage({
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 md:py-8">
       <SEOHead
-        title={`${district.name} জেলার সরকারি সেবা অভিজ্ঞতা ও নাগরিক পর্যবেক্ষণ | ঘুষখুর`}
+        title={`${district.name} জেলার সরকারি সেবা অভিজ্ঞতা ও নাগরিক পর্যবেক্ষণ | ঘুষখোর`}
         description={`${district.name} জেলার ভূমি অফিস, পাসপোর্ট, বিআরটিএ, বিদ্যুৎ ও স্বাস্থ্য সেবা সংক্রান্ত নাগরিকদের বাস্তব অভিজ্ঞতা ও সতর্কতা।`}
         canonicalUrl={`/district/${district.slug}`}
         noindex={!hasContent} // Requirement 17 & 27: Thin pages with no stories must not be indexed

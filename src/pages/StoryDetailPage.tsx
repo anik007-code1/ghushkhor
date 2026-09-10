@@ -77,12 +77,12 @@ export default function StoryDetailPage({ slug, stories = [], settings, onNaviga
       },
       publisher: {
         '@type': 'Organization',
-        name: 'ঘুষখুর',
+        name: 'ঘুষখোর',
         url: origin,
       },
       author: {
         '@type': 'Organization',
-        name: 'নাগরিক অবদানকারী (ঘুষখুর সম্পাদকীয় পর্যালোচিত)',
+        name: 'নাগরিক অবদানকারী (ঘুষখোর সম্পাদকীয় পর্যালোচিত)',
       },
       articleSection: story.department,
       inLanguage: 'bn',
@@ -108,7 +108,7 @@ export default function StoryDetailPage({ slug, stories = [], settings, onNaviga
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
         <SEOHead
-          title="অভিজ্ঞতাটি পাওয়া যায়নি | ঘুষখুর"
+          title="অভিজ্ঞতাটি পাওয়া যায়নি | ঘুষখোর"
           description="অনুরোধকৃত প্রতিবেদনটি পাওয়া যায়নি বা এখনো প্রকাশিত হয়নি।"
           noindex={true}
         />
@@ -209,7 +209,7 @@ export default function StoryDetailPage({ slug, stories = [], settings, onNaviga
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 md:py-8">
       <SEOHead
-        title={`${story.title} | ঘুষখুর`}
+        title={`${story.title} | ঘুষখোর`}
         description={story.metaDescription}
         canonicalUrl={`/story/${story.slug}`}
         ogType="article"

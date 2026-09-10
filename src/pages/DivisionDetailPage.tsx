@@ -24,7 +24,7 @@ export default function DivisionDetailPage({
     return (
       <div className="max-w-4xl mx-auto px-4 py-16 text-center">
         <SEOHead
-          title="বিভাগটি পাওয়া যায়নি | ঘুষখুর"
+          title="বিভাগটি পাওয়া যায়নি | ঘুষখোর"
           description="অনুরোধকৃত বিভাগটি খুঁজে পাওয়া যায়নি।"
           noindex={true}
         />
@@ -47,7 +47,7 @@ export default function DivisionDetailPage({
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 md:py-8">
       <SEOHead
-        title={`${division.name} বিভাগের নাগরিক অভিজ্ঞতা ও সেবা পর্যবেক্ষণ | ঘুষখুর`}
+        title={`${division.name} বিভাগের নাগরিক অভিজ্ঞতা ও সেবা পর্যবেক্ষণ | ঘুষখোর`}
         description={division.description}
         canonicalUrl={`/division/${division.slug}`}
       />

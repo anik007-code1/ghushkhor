@@ -21,7 +21,7 @@ export default function SEOHead({
 }: SEOHeadProps) {
   useEffect(() => {
     // Set page title
-    document.title = title.includes('ঘুষখুর') ? title : `${title} | ঘুষখুর`;
+    document.title = title.includes('ঘুষখোর') ? title : `${title} | ঘুষখোর`;
 
     // Helper to update or create meta tag
     const setMeta = (name: string, content: string, isProperty = false) => {
@@ -37,7 +37,7 @@ export default function SEOHead({
 
     // Update standard meta tags
     setMeta('description', description);
-    setMeta('keywords', 'ঘুষ, ঘুষখুর, ghush, ghushkhur, corruption in bangladesh, bribery bangladesh, সরকারি অফিসে ঘুষ, ভূমি অফিস ঘুষ, নামজারি ঘুষ, সাব রেজিস্ট্রি অফিস ঘুষ, NID corruption, citizen experience, নাগরিক অভিযোগ, দুর্নীতি দমন');
+    setMeta('keywords', 'ঘুষ, ঘুষখোর, ghush, ghushkhur, corruption in bangladesh, bribery bangladesh, সরকারি অফিসে ঘুষ, ভূমি অফিস ঘুষ, নামজারি ঘুষ, সাব রেজিস্ট্রি অফিস ঘুষ, NID corruption, citizen experience, নাগরিক অভিযোগ, দুর্নীতি দমন');
     setMeta('robots', noindex ? 'noindex, nofollow' : 'index, follow');
 
     // Open Graph

@@ -15,7 +15,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <div className="w-8 h-8 rounded bg-red-700 text-white flex items-center justify-center font-bold text-lg">
                 ঘু
               </div>
-              <span className="font-serif text-2xl font-bold text-white">ঘুষখুর</span>
+              <span className="font-serif text-2xl font-bold text-white">ঘুষখোর</span>
             </div>
             <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
               বাংলাদেশের নাগরিকদের সেবা গ্রহণ ও প্রশাসনিক অভিজ্ঞতার দায়িত্বশীল ও উন্মুক্ত আর্কাইভ। নাগরিকদের সচেতনতা বৃদ্ধি ও স্বচ্ছতা প্রতিষ্ঠাই আমাদের মূল লক্ষ্য।
@@ -24,7 +24,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <span className="font-semibold text-amber-400 block mb-1">
                 ⚠️ স্বাতন্ত্র্য ও স্বাধীনতা ঘোষণা:
               </span>
-              ঘুষখুর কোনো সরকারি সংস্থা বা বাংলাদেশ সরকারের অফিশিয়াল ওয়েবসাইট নয়। এটি সম্পূর্ণ স্বাধীন ও নাগরিক-চালিত একটি তথ্য ও পর্যবেক্ষণমূলক প্রকাশনা প্ল্যাটফর্ম।
+              ঘুষখোর কোনো সরকারি সংস্থা বা বাংলাদেশ সরকারের অফিশিয়াল ওয়েবসাইট নয়। এটি সম্পূর্ণ স্বাধীন ও নাগরিক-চালিত একটি তথ্য ও পর্যবেক্ষণমূলক প্রকাশনা প্ল্যাটফর্ম।
             </div>
           </div>
 
@@ -94,7 +94,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                   onClick={() => onNavigate('/about')}
                   className="hover:text-white hover:underline transition-colors"
                 >
-                  ঘুষখুর সম্পর্কে
+                  ঘুষখোর সম্পর্কে
                 </button>
               </li>
               <li>
@@ -190,7 +190,7 @@ export default function Footer({ onNavigate }: FooterProps) {
 
         {/* Bottom copyright and language info */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-3">
-          <p>© {new Date().getFullYear()} ঘুষখুর। সর্বস্বত্ব সংরক্ষিত। জনস্বার্থে প্রকাশিত নাগরিক ফোরাম।</p>
+          <p>© {new Date().getFullYear()} ঘুষখোর। সর্বস্বত্ব সংরক্ষিত। জনস্বার্থে প্রকাশিত নাগরিক ফোরাম।</p>
           <div className="flex items-center gap-2 text-stone-400">
             <Globe className="w-3.5 h-3.5" />
             <span>ভাষা: বাংলা (বাংলা বর্ণমালা ও প্রমিত বানানরীতি)</span>

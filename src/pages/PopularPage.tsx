@@ -20,7 +20,7 @@ export default function PopularPage({ stories = [], settings, onNavigate }: Popu
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 md:py-8">
       <SEOHead
-        title="জনপ্রিয় নাগরিক অভিজ্ঞতা ও গুরুত্বপূর্ণ পর্যবেক্ষণ | ঘুষখুর"
+        title="জনপ্রিয় নাগরিক অভিজ্ঞতা ও গুরুত্বপূর্ণ পর্যবেক্ষণ | ঘুষখোর"
         description="পাঠক ও নাগরিকদের ভোটে সর্বাধিক সহায়ক ও সচেতনতামূলক সরকারি সেবা অভিজ্ঞতা ও পরামর্শের সংকলন।"
         canonicalUrl="/popular"
       />

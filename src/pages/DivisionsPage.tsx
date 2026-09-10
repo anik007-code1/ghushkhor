@@ -16,7 +16,7 @@ export default function DivisionsPage({ stories = [], onNavigate }: DivisionsPag
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 md:py-8">
       <SEOHead
-        title="বিভাগ ও জেলাভিত্তিক নাগরিক অভিজ্ঞতা সূচি | ঘুষখুর"
+        title="বিভাগ ও জেলাভিত্তিক নাগরিক অভিজ্ঞতা সূচি | ঘুষখোর"
         description="বাংলাদেশের ৮টি প্রশাসনিক বিভাগ ও ৬৪টি জেলার জনসেবা অভিজ্ঞতা, নাগরিক প্রতিবেদন ও স্থানীয় অফিসের পর্যবেক্ষণ।"
         canonicalUrl="/divisions"
       />

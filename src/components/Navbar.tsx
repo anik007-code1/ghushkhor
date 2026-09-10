@@ -69,7 +69,7 @@ export default function Navbar({ currentPath, onNavigate, onSearch }: NavbarProp
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white group-hover:text-red-400 transition-colors">
-                  ঘুষখুর
+                  ঘুষখোর
                 </span>
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-red-400 border border-red-800/80 bg-red-950/60 px-1.5 py-0.5 rounded">
                   নাগরিক প্ল্যাটফর্ম

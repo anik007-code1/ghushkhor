@@ -15,6 +15,25 @@ const PORT = Number(process.env.PORT) || 3001;
 
 app.use(express.json());
 
+// Security: In production, block public web access to /src/ folder and raw source files
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === 'production') {
+    const p = req.path.toLowerCase();
+    if (
+      p.startsWith('/src') ||
+      p.endsWith('.ts') ||
+      p.endsWith('.tsx') ||
+      p.endsWith('.env') ||
+      p === '/server.ts' ||
+      p === '/vite.config.ts' ||
+      p.includes('/.')
+    ) {
+      return res.status(403).send('Forbidden: Access to source files is restricted.');
+    }
+  }
+  next();
+});
+
 // In-memory data store with initial authentic data
 let stories: Story[] = [...INITIAL_STORIES];
 
@@ -142,7 +161,7 @@ ${urls
 // -------------------------------------------------------------
 app.get('/robots.txt', (req, res) => {
   const baseUrl = getCanonicalBase(req);
-  const robots = `# robots.txt for ঘুষখুর platform
+  const robots = `# robots.txt for ঘুষখোর platform
 User-agent: *
 Allow: /
 Allow: /experiences
@@ -653,7 +672,7 @@ function injectSEOIntoHTML(rawHtml: string, reqUrl: string): string {
   const baseUrl = getCanonicalBase();
   const cleanPath = reqUrl.split('?')[0];
 
-  let title = 'ঘুষখুর - নাগরিক অভিজ্ঞতা ও সেবা প্ল্যাটফর্ম';
+  let title = 'ঘুষখোর - নাগরিক অভিজ্ঞতা ও সেবা প্ল্যাটফর্ম';
   let description = 'বাংলাদেশের নাগরিকদের জনসেবা গ্রহণ, সরকারি দপ্তর ও নাগরিক সেবার বাস্তব অভিজ্ঞতা এবং জবাবদিহিতা বিষয়ক উন্মুক্ত ও দায়িত্বশীল প্ল্যাটফর্ম।';
   let canonicalUrl = `${baseUrl}${cleanPath === '/' ? '' : cleanPath}`;
   let ogType = 'website';
@@ -666,7 +685,7 @@ function injectSEOIntoHTML(rawHtml: string, reqUrl: string): string {
     const story = stories.find((s) => s.slug === slug);
 
     if (story && story.status === 'PUBLISHED') {
-      title = `${story.title} | ঘুষখুর`;
+      title = `${story.title} | ঘুষখোর`;
       description = story.metaDescription;
       ogType = 'article';
       canonicalUrl = `${baseUrl}/story/${story.slug}`;
@@ -685,7 +704,7 @@ function injectSEOIntoHTML(rawHtml: string, reqUrl: string): string {
         },
         publisher: {
           '@type': 'Organization',
-          name: 'ঘুষখুর',
+          name: 'ঘুষখোর',
           url: baseUrl,
           logo: {
             '@type': 'ImageObject',
@@ -694,29 +713,29 @@ function injectSEOIntoHTML(rawHtml: string, reqUrl: string): string {
         },
         author: {
           '@type': 'Organization',
-          name: 'নাগরিক অবদানকারী (ঘুষখুর সম্পাদকীয় পর্যালোচিত)',
+          name: 'নাগরিক অবদানকারী (ঘুষখোর সম্পাদকীয় পর্যালোচিত)',
         },
         articleSection: story.department,
         inLanguage: 'bn',
       };
     } else {
-      title = 'অভিজ্ঞতাটি পাওয়া যায়নি | ঘুষখুর';
+      title = 'অভিজ্ঞতাটি পাওয়া যায়নি | ঘুষখোর';
       robotsTag = 'noindex, nofollow';
     }
   } else if (cleanPath === '/experiences') {
-    title = 'সকল নাগরিক অভিজ্ঞতা ও বাস্তব প্রতিবেদন | ঘুষখুর';
+    title = 'সকল নাগরিক অভিজ্ঞতা ও বাস্তব প্রতিবেদন | ঘুষখোর';
     description = 'ভূমি, পাসপোর্ট, বিআরটিএ, বিদ্যুৎ, স্বাস্থ্যসহ বিভিন্ন সরকারি দপ্তরের সেবাপ্রার্থীদের সরাসরি অভিজ্ঞতা ও পরামর্শ।';
   } else if (cleanPath === '/popular') {
-    title = 'জনপ্রিয় অভিজ্ঞতা ও নাগরিক পর্যবেক্ষণ | ঘুষখুর';
+    title = 'জনপ্রিয় অভিজ্ঞতা ও নাগরিক পর্যবেক্ষণ | ঘুষখোর';
     description = 'নাগরিকদের কাছে সর্বাধিক সহায়ক ও সচেতনতামূলক সরকারি সেবা অভিজ্ঞতার সংকলন।';
   } else if (cleanPath === '/divisions') {
-    title = 'বিভাগভিত্তিক নাগরিক অভিজ্ঞতা | ঘুষখুর';
+    title = 'বিভাগভিত্তিক নাগরিক অভিজ্ঞতা | ঘুষখোর';
     description = 'বাংলাদেশের ৮টি প্রশাসনিক বিভাগের সরকারি সেবা ও নাগরিক পর্যবেক্ষণ।';
   } else if (cleanPath.startsWith('/division/')) {
     const divSlug = cleanPath.replace('/division/', '').replace(/\/$/, '');
     const div = BANGLADESH_DIVISIONS.find((d) => d.slug === divSlug);
     if (div) {
-      title = `${div.name} বিভাগের নাগরিক অভিজ্ঞতা ও সেবা পর্যবেক্ষণ | ঘুষখুর`;
+      title = `${div.name} বিভাগের নাগরিক অভিজ্ঞতা ও সেবা পর্যবেক্ষণ | ঘুষখোর`;
       description = div.description;
     }
   } else if (cleanPath.startsWith('/district/')) {
@@ -724,7 +743,7 @@ function injectSEOIntoHTML(rawHtml: string, reqUrl: string): string {
     const dist = ALL_DISTRICTS.find((d) => d.slug === distSlug);
     const hasStories = stories.some((s) => s.districtSlug === distSlug && s.status === 'PUBLISHED');
     if (dist) {
-      title = `${dist.name} জেলার সরকারি সেবা অভিজ্ঞতা ও নাগরিক পর্যালোচনা | ঘুষখুর`;
+      title = `${dist.name} জেলার সরকারি সেবা অভিজ্ঞতা ও নাগরিক পর্যালোচনা | ঘুষখোর`;
       description = `${dist.name} জেলার বিভিন্ন সরকারি কার্যালয়ের সেবা গ্রহণকারীদের বাস্তব অভিজ্ঞতা।`;
       if (!hasStories) {
         // Avoid thin page indexing until stories exist (Requirement 17, 27)
@@ -732,28 +751,28 @@ function injectSEOIntoHTML(rawHtml: string, reqUrl: string): string {
       }
     }
   } else if (cleanPath === '/about') {
-    title = 'ঘুষখুর সম্পর্কে - লক্ষ্য ও নীতি | ঘুষখুর';
-    description = 'ঘুষখুর কী, কেন এটি প্রতিষ্ঠিত এবং কীভাবে নাগরিক অভিজ্ঞতার স্বচ্ছ ও দায়িত্বশীল প্রকাশ নিশ্চিত করা হয়।';
+    title = 'ঘুষখোর সম্পর্কে - লক্ষ্য ও নীতি | ঘুষখোর';
+    description = 'ঘুষখোর কী, কেন এটি প্রতিষ্ঠিত এবং কীভাবে নাগরিক অভিজ্ঞতার স্বচ্ছ ও দায়িত্বশীল প্রকাশ নিশ্চিত করা হয়।';
   } else if (cleanPath === '/editorial-policy') {
-    title = 'সম্পাদকীয় নীতিমালা ও পর্যালোচনা পদ্ধতি | ঘুষখুর';
+    title = 'সম্পাদকীয় নীতিমালা ও পর্যালোচনা পদ্ধতি | ঘুষখোর';
     description = 'নাগরিক লেখার পর্যালোচনা, তথ্যের সত্যতা যাচাই এবং ব্যক্তিগত গোপনীয়তা রক্ষা নীতিমালা।';
   } else if (cleanPath === '/community-guidelines') {
-    title = 'কমিউটি গাইডলাইন - দায়িত্বশীল প্রকাশের নিয়ম | ঘুষখুর';
-    description = 'ঘুষখুর প্ল্যাটফর্মে লেখার নিয়মাবলি: কী লিখবেন এবং কী বর্জন করবেন।';
+    title = 'কমিউটি গাইডলাইন - দায়িত্বশীল প্রকাশের নিয়ম | ঘুষখোর';
+    description = 'ঘুষখোর প্ল্যাটফর্মে লেখার নিয়মাবলি: কী লিখবেন এবং কী বর্জন করবেন।';
   } else if (cleanPath === '/privacy') {
-    title = 'গোপনীয়তা নীতি (Privacy Policy) | ঘুষখুর';
-    description = 'ঘুষখুর প্ল্যাটফর্মের ব্যবহারকারীদের গোপনীয়তা সংরক্ষণ, কুকি ব্যবহার এবং ডেটা নিরাপত্তা নীতিমালা।';
+    title = 'গোপনীয়তা নীতি (Privacy Policy) | ঘুষখোর';
+    description = 'ঘুষখোর প্ল্যাটফর্মের ব্যবহারকারীদের গোপনীয়তা সংরক্ষণ, কুকি ব্যবহার এবং ডেটা নিরাপত্তা নীতিমালা।';
   } else if (cleanPath === '/terms') {
-    title = 'ব্যবহারের শর্তাবলি (Terms of Service) | ঘুষখুর';
-    description = 'ঘুষখুর প্ল্যাটফর্ম ব্যবহারের নিয়মনীতি ও দায়িত্ব-অধিকার।';
+    title = 'ব্যবহারের শর্তাবলি (Terms of Service) | ঘুষখোর';
+    description = 'ঘুষখোর প্ল্যাটফর্ম ব্যবহারের নিয়মনীতি ও দায়িত্ব-অধিকার।';
   } else if (cleanPath === '/contact') {
-    title = 'যোগাযোগ ও সম্পাদকীয় সহায়তা | ঘুষখুর';
+    title = 'যোগাযোগ ও সম্পাদকীয় সহায়তা | ঘুষখোর';
     description = 'সংশোধনী, মতামত বা যেকোনো বিষয়ে সম্পাদকীয় দলের সাথে যোগাযোগ করুন।';
   } else if (cleanPath === '/report-content') {
-    title = 'কনটেন্ট রিপোর্ট ও অভিযোগ ফরম | ঘুষখুর';
+    title = 'কনটেন্ট রিপোর্ট ও অভিযোগ ফরম | ঘুষখোর';
     description = 'কোনো প্রকাশিত লেখায় নীতিমালা লঙ্ঘন বা ব্যক্তিগত তথ্য থাকলে সরাসরি রিপোর্ট করুন।';
   } else if (cleanPath.startsWith('/admin')) {
-    title = 'মডারেশন ও অ্যাডমিন প্যানেল | ঘুষখুর';
+    title = 'মডারেশন ও অ্যাডমিন প্যানেল | ঘুষখোর';
     robotsTag = 'noindex, nofollow'; // Requirement 27
   }
 
@@ -817,14 +836,14 @@ function injectSEOIntoHTML(rawHtml: string, reqUrl: string): string {
           '@type': 'WebSite',
           '@id': `${baseUrl}/#website`,
           url: baseUrl,
-          name: 'ঘুষখুর',
+          name: 'ঘুষখোর',
           description: 'বাংলাদেশের নাগরিকদের জনসেবা গ্রহণ ও জবাবদিহিতা প্ল্যাটফর্ম',
           inLanguage: 'bn',
         },
         {
           '@type': 'Organization',
           '@id': `${baseUrl}/#organization`,
-          name: 'ঘুষখুর',
+          name: 'ঘুষখোর',
           url: baseUrl,
         },
       ],
@@ -872,7 +891,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`ঘুষখুর platform server running on http://0.0.0.0:${PORT}`);
+    console.log(`ঘুষখোর platform server running on http://0.0.0.0:${PORT}`);
   });
 }
 

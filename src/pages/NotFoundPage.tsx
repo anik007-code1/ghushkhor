@@ -9,7 +9,7 @@ export default function NotFoundPage({ onNavigate }: NotFoundPageProps) {
   return (
     <div className="max-w-3xl mx-auto px-4 py-16 text-center">
       <SEOHead
-        title="৪০৪ - পাতাটি খুঁজে পাওয়া যায়নি | ঘুষখুর"
+        title="৪০৪ - পাতাটি খুঁজে পাওয়া যায়নি | ঘুষখোর"
         description="অনুরোধকৃত ওয়েব পাতাটি খুঁজে পাওয়া যায়নি।"
         noindex={true}
       />

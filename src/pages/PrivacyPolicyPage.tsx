@@ -10,8 +10,8 @@ export default function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 md:py-8">
       <SEOHead
-        title="গোপনীয়তা নীতি (Privacy Policy) | ঘুষখুর"
-        description="ঘুষখুর প্ল্যাটফর্মে ব্যবহারকারীর তথ্য সুরক্ষা, বেনামী ডেটা ব্যবস্থাপনা, কুকিজ এবং গুগল এডসেন্স বিজ্ঞাপন সংক্রান্ত পূর্ণাঙ্গ নীতি।"
+        title="গোপনীয়তা নীতি (Privacy Policy) | ঘুষখোর"
+        description="ঘুষখোর প্ল্যাটফর্মে ব্যবহারকারীর তথ্য সুরক্ষা, বেনামী ডেটা ব্যবস্থাপনা, কুকিজ এবং গুগল এডসেন্স বিজ্ঞাপন সংক্রান্ত পূর্ণাঙ্গ নীতি।"
         canonicalUrl="/privacy"
       />
 
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage({ onNavigate }: PrivacyPolicyPageProps
         </div>
 
         <p className="text-stone-700 text-sm sm:text-base leading-relaxed">
-          ‘ঘুষখুর’ (GhushKhur) প্ল্যাটফর্ম সাধারণ নাগরিকদের ব্যক্তিগত গোপনীয়তার সর্বোচ্চ সম্মান বজায় রাখতে প্রতিশ্রুতিবদ্ধ। এই নীতিমালাটি স্পষ্ট করে যে আমরা কীভাবে আপনার তথ্য পরিচালনা করি, কোন তথ্যগুলো আমরা কখনোই সংগ্রহ করি না এবং কীভাবে তৃতীয় পক্ষের সেবা ও বিজ্ঞাপন ব্যবহৃত হয়।
+          ‘ঘুষখোর’ (GhushKhur) প্ল্যাটফর্ম সাধারণ নাগরিকদের ব্যক্তিগত গোপনীয়তার সর্বোচ্চ সম্মান বজায় রাখতে প্রতিশ্রুতিবদ্ধ। এই নীতিমালাটি স্পষ্ট করে যে আমরা কীভাবে আপনার তথ্য পরিচালনা করি, কোন তথ্যগুলো আমরা কখনোই সংগ্রহ করি না এবং কীভাবে তৃতীয় পক্ষের সেবা ও বিজ্ঞাপন ব্যবহৃত হয়।
         </p>
 
         {/* 1. What we do NOT collect */}

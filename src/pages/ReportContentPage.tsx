@@ -40,7 +40,7 @@ export default function ReportContentPage({ onNavigate }: ReportContentPageProps
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 md:py-8">
       <SEOHead
-        title="কনটেন্ট রিপোর্ট ও অভিযোগ দাখিল | ঘুষখুর"
+        title="কনটেন্ট রিপোর্ট ও অভিযোগ দাখিল | ঘুষখোর"
         description="কোনো প্রকাশিত লেখার ভুল তথ্য, ব্যক্তিগত আক্রমণ বা নীতিমালা লঙ্ঘনের বিরুদ্ধে রিপোর্ট দাখিলের ফর্ম।"
         canonicalUrl="/report-content"
       />

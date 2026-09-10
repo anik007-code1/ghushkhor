@@ -325,7 +325,7 @@ export default function AdminDashboard({
   // Save Settings
   const handleSaveSettings = async () => {
     const updated = {
-      ...(initialSettings || { siteName: 'ঘুষখুর', siteUrl: window.location.origin }),
+      ...(initialSettings || { siteName: 'ঘুষখোর', siteUrl: window.location.origin }),
       adsEnabled,
       adsensePublisherId: publisherId,
       autoAdsEnabled: autoAds,
@@ -420,8 +420,8 @@ export default function AdminDashboard({
     return (
       <div className="min-h-[80vh] flex items-center justify-center px-4 py-12 bg-stone-100">
         <SEOHead
-          title="অ্যাডমিন লগইন | ঘুষখুর"
-          description="ঘুষখুর সম্পাদকীয় ও প্রশাসন প্যানেল লগইন পোর্টাল।"
+          title="অ্যাডমিন লগইন | ঘুষখোর"
+          description="ঘুষখোর সম্পাদকীয় ও প্রশাসন প্যানেল লগইন পোর্টাল।"
           noindex={true}
         />
 
@@ -432,7 +432,7 @@ export default function AdminDashboard({
               ঘু
             </div>
             <h1 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900">
-              ঘুষখুর অ্যাডমিন পোর্টাল
+              ঘুষখোর অ্যাডমিন পোর্টাল
             </h1>
             <p className="text-xs sm:text-sm text-stone-500 mt-1">
               সুরক্ষিত সম্পাদকীয় ও নাগরিক অভিজ্ঞতা মডারেশন কক্ষ
@@ -551,8 +551,8 @@ export default function AdminDashboard({
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 md:py-8 space-y-6">
       <SEOHead
-        title="মডারেশন ও অ্যাডমিন প্যানেল | ঘুষখুর"
-        description="ঘুষখুর প্ল্যাটফর্মের নাগরিক কনটেন্ট মডারেশন, নিরাপত্তা ও সাইট কনফিগারেশন প্যানেল।"
+        title="মডারেশন ও অ্যাডমিন প্যানেল | ঘুষখোর"
+        description="ঘুষখোর প্ল্যাটফর্মের নাগরিক কনটেন্ট মডারেশন, নিরাপত্তা ও সাইট কনফিগারেশন প্যানেল।"
         noindex={true}
       />
 

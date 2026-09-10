@@ -71,8 +71,13 @@ export default function AdSlot({ type, settings, className = '' }: AdSlotProps) 
     );
   }
 
+  // If ads are disabled, only show placeholder in development mode
+  if (!import.meta.env.DEV) {
+    return null;
+  }
+
   // If ads are disabled (as per AdSense pre-launch readiness requirement 30),
-  // show a clean placeholder indicating the compliant reserved slot
+  // show a clean placeholder indicating the compliant reserved slot (only in development)
   return (
     <div
       className={`w-full my-5 bg-stone-100/60 border border-dashed border-stone-300 rounded-lg p-3 flex flex-col items-center justify-center text-center transition-opacity hover:border-stone-400 ${heightClass} ${className}`}
